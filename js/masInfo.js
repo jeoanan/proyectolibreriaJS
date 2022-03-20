@@ -21,6 +21,10 @@ export function masInfo(event){
        document.querySelector('#modalAuthor').textContent=`Autor: ${producto.author}`;
        document.querySelector('#modalGenero').textContent=`Géneros: ${producto.genero}`;
        document.querySelector('#modalDescripcion').textContent=`Descripción: ${producto.descripcion}`;
+       document.querySelector('#modalYear').textContent=`Año: ${producto.year}`;
+       document.querySelector('#modalEditorial').textContent=`Editorial: ${producto.editorial}`;
+       document.querySelector('#modalDisponibles').textContent=`Unidades Disponibles: ${producto.disponibles}`;
+       document.querySelector('#modalPrecio').textContent=`Precio: ${producto.precio}`;
 
        console.log(producto)
     };
