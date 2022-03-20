@@ -4,38 +4,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda | HP Lovecraft Tiendas</title>
+    <title>Tienda |El coleccionista</title>
     <link rel="shortcut icon" href="../public/img/lovecraft_icon.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="../public/style.css">
 
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand animate__animated animate__pulse" href="../index.html">
-                <img src="../public/img/lovecraft_logo.png" alt="" width="90" height="83">
-                <strong>H.P LOVECRAFT</strong>
-            </a>
-            <div class="d-flex">
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./libreria.html">Tienda Online</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./biogafria.html">Biografía</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./nosotros.html">Quienes Somos</a>
-                        </li>
-                    </ul>
-                  </div>
-            </div>
-            
+        <div class="container-fluid" id="navigation">    
         </div>
     </nav>
+    <div class="container-fluid">
+        <div class="row" id="productosTienda">
+        </div>
+    </div>
+    <div class="modal" tabindex="-1" id="modalTienda">
+        <div class="modal-dialog modal-dialog-custom">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalTitulo"></h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                  <div class="col-4">
+                    <img src="" alt="" id="modalImg" class="img-fluid w-100">
+                  </div>
+                  <div class="col-8">
+                    <p id="modalGenero"></p>
+                    <p id="modalAuthor"></p>
+                    <p id="modalDescripcion"></p>
+                  </div>
+              </div>
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    
+<script src="../public/controlador.js" type="module"></script>    
 </html>

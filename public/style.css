@@ -1,0 +1,21 @@
+.nav-custom{
+    position:absolute;
+    width: -webkit-fill-available;
+}
+
+.card-title-custom{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.card-text-custom{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-bottom: 0;
+}
+
+.modal-dialog-custom{
+    max-width: 700px;
+}
