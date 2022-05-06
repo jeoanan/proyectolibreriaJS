@@ -2,6 +2,13 @@
     position:absolute;
     width: -webkit-fill-available;
 }
+.navlink-custom{
+    align-self: center;
+}
+
+.icon-custom{
+    font-size: 27px;
+}
 
 .card-title-custom{
     text-overflow: ellipsis;
@@ -18,4 +25,30 @@
 
 .modal-dialog-custom{
     max-width: 700px;
+}
+
+.i-custom{
+    font-size: 300px;
+}
+
+.pcarrito{
+    margin-bottom: 0;
+}
+
+
+.divContainerSubtotal-custom{
+    background-color: #dee2e6;
+    border-radius: 7px;
+    margin: 20px 5px;
+    padding: 20px 0;
+}
+
+.footer{
+    height: 200px;
+    background-color: #343a40;
+    color:#fff;
+}
+
+.linkredes{
+    height: 40px;
 }

@@ -1,5 +1,4 @@
 export function header(){
-
     const navigation=document.querySelector('#navigation');
 
     const linkMain=document.createElement('a');
@@ -27,19 +26,27 @@ export function header(){
             main:true,
             nombre:"Tienda Online",
             hrefIndex:"vistas/libreria.html",
-            href:"libreria.html"
+            href:"libreria.html",
+            icon:false
         },
         {
             main:false,
             nombre:"Quienes Somos",
             hrefIndex:"vistas/nosotros.html",
-            href:"nosotros.html"
+            href:"nosotros.html",
+            icon:false
         },
         {
             main:false,
             nombre:"Regístrate/Inicia Sesión",
             hrefIndex:"vistas/registrate.html",
-            href:"registrate.html"
+            href:"registrate.html",
+            icon:false
+        },
+        {
+            main:false,
+            nombre:"",
+            icon:true
         }
     ];
 
@@ -48,17 +55,32 @@ export function header(){
         listaLink.classList.add('nav-item');
 
         const navLink=document.createElement('a');
-        navLink.classList.add('nav-link');
-        navLink.textContent=linkNav.nombre;
+        navLink.classList.add('nav-link','navlink-custom');
+
+        if(linkNav.icon && window.location.pathname=="/vistas/libreria.html"){
+            const iconContainer=document.createElement('i');
+            iconContainer.classList.add('bi','bi-cart3','icon-custom');
+
+            const spanCounter= document.createElement('span')
+            spanCounter.classList.add('position-absolute','top-10','start-10','translate-middle','badge','rounded-pill','bg-warning','invisible')
+            spanCounter.id='contador';
+            spanCounter.textContent=99;
+
+            navLink.id="showCarrito";
+            navLink.appendChild(iconContainer);
+            navLink.appendChild(spanCounter);
+        }else{
+            navLink.textContent=linkNav.nombre;
+
+            if(window.location.pathname=="/"){
+                navLink.href=linkNav.hrefIndex;
+            }else{
+                navLink.href=linkNav.href;
+            }
+        }
 
         if(linkNav.main){
             navLink.classList.add('active')
-        }
-
-        if(window.location.pathname=="/"){
-            navLink.href=linkNav.hrefIndex;
-        }else{
-            navLink.href=linkNav.href;
         }
 
         ulNavBar.appendChild(navLink);

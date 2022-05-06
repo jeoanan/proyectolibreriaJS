@@ -5,6 +5,8 @@ export function masInfo(event){
        let modalTienda = new bootstrap.Modal(document.getElementById('modalTienda'));
        modalTienda.show();
 
+       
+
        producto.id=event.target.parentElement.parentElement.dataset.id;
        producto.editorial=event.target.parentElement.dataset.editorial;
        producto.descripcion=document.querySelector(`#descripcion-${producto.id}`).textContent;
@@ -18,14 +20,18 @@ export function masInfo(event){
 
        document.querySelector('#modalTitulo').textContent = producto.nombre;
        document.querySelector('#modalImg').src = producto.img;
-       document.querySelector('#modalAuthor').textContent=`Autor: ${producto.author}`;
-       document.querySelector('#modalGenero').textContent=`Géneros: ${producto.genero}`;
-       document.querySelector('#modalDescripcion').textContent=`Descripción: ${producto.descripcion}`;
-       document.querySelector('#modalYear').textContent=`Año: ${producto.year}`;
-       document.querySelector('#modalEditorial').textContent=`Editorial: ${producto.editorial}`;
-       document.querySelector('#modalDisponibles').textContent=`Unidades Disponibles: ${producto.disponibles}`;
-       document.querySelector('#modalPrecio').textContent=`Precio: ${producto.precio}`;
+       document.querySelector('#modalAuthor').textContent=producto.author;
+       document.querySelector('#modalGenero').textContent=producto.genero;
+       document.querySelector('#modalDescripcion').textContent=producto.descripcion;
+       document.querySelector('#modalYear').textContent=producto.year;
+       document.querySelector('#modalEditorial').textContent=producto.editorial;
+       document.querySelector('#modalDisponibles').textContent=producto.disponibles;
+       document.querySelector('#modalPrecio').textContent=producto.precio; 
 
-       console.log(producto)
+       const cantidad=document.querySelector('#modalCantidad');
+       cantidad.setAttribute("max",producto.disponibles);
+       cantidad.value=1;
+
+       
     };
 }
