@@ -51,6 +51,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
         console.log(carrito)
     });
+
+    
+    
     
     
 

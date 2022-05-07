@@ -1,8 +1,7 @@
-export function showCarrito(cantidadProductos,carrito){
+export function showCarrito(cantidadProductos,carrito,tipoMoneda){
     var carritoModal = new bootstrap.Modal(document.getElementById('modalCarrito'));
     const carritoBody = document.querySelector('#CarritoBody');
     carritoBody.textContent="";
-
     let total=0;
     
 
@@ -22,7 +21,10 @@ export function showCarrito(cantidadProductos,carrito){
         carritoBody.appendChild(iconCarritoEmptyContainer);
     }else{
         carrito.forEach(producto => {
-            console.log(producto);
+            if(tipoMoneda){
+                producto.precio=producto.precio/4049;
+                producto.precio=producto.precio.toFixed(2);
+            }
             const divContentCarrito=document.createElement('div');
             divContentCarrito.classList.add('row','mb-3');
 
@@ -101,6 +103,7 @@ export function showCarrito(cantidadProductos,carrito){
             subtotalSpan.textContent=subtotal;
 
             total+=subtotal;
+            total=total.toFixed(2);
 
             cantidadH.appendChild(cantidadLibro);
             precioH.appendChild(precioLibro);
@@ -138,7 +141,7 @@ export function showCarrito(cantidadProductos,carrito){
             carritoBody.appendChild(divContentCarrito);
         });
     }
-
+    
     const totalDiv = document.querySelector('#totalCarrito');
     totalDiv.textContent="";
     const totalH= document.createElement('h5');
@@ -147,8 +150,22 @@ export function showCarrito(cantidadProductos,carrito){
     const totalSpan= document.createElement('span');
     totalSpan.textContent=total;
 
+    const btnCambioMoneda=document.querySelector('#cambioMoneda');
+    btnCambioMoneda.classList.add('btn');
+
+    if(cambioMoneda){
+        btnCambioMoneda.classList.add('btn-warning');
+        btnCambioMoneda.textContent="COP";
+    }else{
+        btnCambioMoneda.classList.add('btn-success');
+        btnCambioMoneda.textContent="USD";
+    }
+
+    console.log(cambioMoneda)
+
     totalH.appendChild(totalSpan)
     totalDiv.appendChild(totalH);
+
 
     carritoModal.show();
 }
