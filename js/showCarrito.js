@@ -21,10 +21,6 @@ export function showCarrito(cantidadProductos,carrito,tipoMoneda){
         carritoBody.appendChild(iconCarritoEmptyContainer);
     }else{
         carrito.forEach(producto => {
-            if(tipoMoneda){
-                producto.precio=producto.precio/4049;
-                producto.precio=producto.precio.toFixed(2);
-            }
             const divContentCarrito=document.createElement('div');
             divContentCarrito.classList.add('row','mb-3');
 
@@ -103,7 +99,6 @@ export function showCarrito(cantidadProductos,carrito,tipoMoneda){
             subtotalSpan.textContent=subtotal;
 
             total+=subtotal;
-            total=total.toFixed(2);
 
             cantidadH.appendChild(cantidadLibro);
             precioH.appendChild(precioLibro);
@@ -148,20 +143,7 @@ export function showCarrito(cantidadProductos,carrito,tipoMoneda){
     totalH.classList.add('fs-5');
     totalH.textContent="Total a pagar: ";
     const totalSpan= document.createElement('span');
-    totalSpan.textContent=total;
-
-    const btnCambioMoneda=document.querySelector('#cambioMoneda');
-    btnCambioMoneda.classList.add('btn');
-
-    if(cambioMoneda){
-        btnCambioMoneda.classList.add('btn-warning');
-        btnCambioMoneda.textContent="COP";
-    }else{
-        btnCambioMoneda.classList.add('btn-success');
-        btnCambioMoneda.textContent="USD";
-    }
-
-    console.log(cambioMoneda)
+    totalSpan.textContent=total.toFixed(2);
 
     totalH.appendChild(totalSpan)
     totalDiv.appendChild(totalH);

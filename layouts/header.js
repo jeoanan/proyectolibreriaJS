@@ -72,7 +72,7 @@ export function header(){
         }else{
             navLink.textContent=linkNav.nombre;
 
-            if(window.location.pathname=="/"){
+            if(window.location.pathname=="/" || window.location.pathname=="/index.html"){
                 navLink.href=linkNav.hrefIndex;
             }else{
                 navLink.href=linkNav.href;

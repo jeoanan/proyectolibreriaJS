@@ -1,14 +1,6 @@
-export function cambioMoneda(){
-    const btnCambioMoneda = document.querySelector('#cambioMoneda');
-    
-    let cambioMoneda=false;
-
-    if(cambioMoneda){
-        
-    }else{
-        btnCambioMoneda.textContent="USD";
-        btnCambioMoneda.classList.add('btn-success');
+export function cambioMoneda(tipoMoneda){
+    if(tipoMoneda){
+        return false;
     }
-
-    console.log(usd);
+    return true
 }

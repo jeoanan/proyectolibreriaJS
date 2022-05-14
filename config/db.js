@@ -10,6 +10,7 @@ export function dbBooks(){
                 ano:'1936',
                 editorial:'Analog Science Fiction and Fact',
                 precio:93500,
+                precioUSD:22.81,
                 unidades:8,
                 img:'../public/img/books/libro_1.jpg'
             },
@@ -21,6 +22,7 @@ export function dbBooks(){
                 ano:'1977',
                 editorial:'panamericana',
                 precio:32900,
+                precioUSD:8.03,
                 unidades:5,
                 img:'../public/img/books/libro_2.jpg',
                 descripcion:"No disponible"
@@ -33,6 +35,7 @@ export function dbBooks(){
                 ano:'1947',
                 editorial:'Jan Romein',
                 precio:17500,
+                precioUSD:4.27,
                 unidades:1,
                 img:'../public/img/books/libro_3.jpg',
                 descripcion:"No disponible"
@@ -45,6 +48,7 @@ export function dbBooks(){
                 ano:'2016',
                 editorial:'Planeta',
                 precio:29900,
+                precioUSD:4.27,
                 unidades:7,
                 img:'../public/img/books/libro_4.jpg',
                 descripcion:"No disponible"
@@ -57,6 +61,7 @@ export function dbBooks(){
                 ano:'1986',
                 editorial:'Sirio',
                 precio:24100,
+                precioUSD:4.27,
                 unidades:2,
                 img:'../public/img/books/libro_5.jpg',
                 descripcion:"No disponible"
@@ -69,6 +74,7 @@ export function dbBooks(){
                 ano:'2002',
                 editorial:'Panamericana',
                 precio:32900,
+                precioUSD:4.27,
                 unidades:0,
                 img:'../public/img/books/libro_6.jpg',
                 descripcion:"No disponible"
@@ -81,6 +87,7 @@ export function dbBooks(){
                 ano:'2010',
                 editorial:'Panamericana',
                 precio:50000,
+                precioUSD:4.27,
                 unidades:2,
                 img:'../public/img/books/libro_7.jpg',
                 descripcion:"Tomo 1 del testamento del Gris"
@@ -93,6 +100,7 @@ export function dbBooks(){
                 ano:'1963',
                 editorial:'Panamericana',
                 precio:37100,
+                precioUSD:4.27,
                 unidades:4,
                 img:'../public/img/books/libro_8.jpg',
                 descripcion:"No disponible,No disponible,No disponible,No disponible,No disponible"
@@ -105,6 +113,7 @@ export function dbBooks(){
                 ano:'1985',
                 editorial:'Especial',
                 precio:29400,
+                precioUSD:4.27,
                 unidades:7,
                 img:'../public/img/books/libro_9.jpg',
                 descripcion:"No disponible"
@@ -117,6 +126,7 @@ export function dbBooks(){
                 ano:'1813',
                 editorial:'Editorial Alma',
                 precio:38500,
+                precioUSD:4.27,
                 unidades:5,
                 img:'../public/img/books/libro_10.jpg',
                 descripcion:"No disponible"
@@ -129,6 +139,7 @@ export function dbBooks(){
                 ano:'1982',
                 editorial:'Penguin Random House',
                 precio:76678,
+                precioUSD:4.27,
                 unidades:0,
                 img:'../public/img/books/libro_11.jpg',
                 descripcion:"No disponible"
@@ -141,6 +152,7 @@ export function dbBooks(){
                 ano:'1928',
                 editorial:'pulp weird',
                 precio:13300,
+                precioUSD:4.27,
                 unidades:10,
                 img:'../public/img/books/libro_12.jpg',
                 descripcion:"No disponible"
