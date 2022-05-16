@@ -5,15 +5,13 @@ import {header} from '../layouts/header.js';
 import {footer} from '../layouts/footer.js';
 import {addCarrito} from '../js/addCarrito.js';
 import { showCarrito } from '../js/showCarrito.js';
-import { cambioMoneda } from '../js/cambioMoneda.js';
 import { limpiarCarrito } from '../js/limpiarCarrito.js';
+import { listarCarrito } from '../js/listarCarrito.js';
 
 document.addEventListener('DOMContentLoaded', ()=>{
     let contenidoTienda=document.querySelector('#productosTienda');
     let contenidoTop=document.querySelector('#top4');
-    let carrito =[];
-    let usdMoneda=false;
-    let cantidadProductos=0;
+    let carritoObj={carrito:[],usdMoneda:false,cantidadProductos:0}
 
     setTimeout(()=>{
         header();
@@ -33,7 +31,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
         const showcarritoModal = document.querySelector('#showCarrito');
         showcarritoModal.addEventListener('click',()=>{
-            showCarrito(cantidadProductos,carrito,usdMoneda);
+
+            console.log(carritoObj);
+            
+            showCarrito(carritoObj);
         })
     },100);
 
@@ -42,32 +43,35 @@ document.addEventListener('DOMContentLoaded', ()=>{
     addCarritoButton.addEventListener('click',()=>{
 
         let producto = addCarrito();
-        cantidadProductos+= Number(producto.cantidad);
+        carritoObj.cantidadProductos+= Number(producto.cantidad);
 
-        if (cantidadProductos > 0){
+        if (carritoObj.cantidadProductos > 0){
             const contador = document.querySelector('#contador');
-            contador.textContent=cantidadProductos;
+            contador.textContent=carritoObj.cantidadProductos;
             contador.classList.remove('invisible');
         }
         
-        carrito.push(producto);
+        carritoObj.carrito.push(producto);
 
-        console.log(carrito)
+        console.log(carritoObj.carrito)
     });
 
     const cambioMonedaButton= document.querySelector('#cambioMoneda');
-    if(usdMoneda){
-        cambioMonedaButton.textContent="COP"
-    }else{
-        cambioMonedaButton.textContent="USD"
-    }
+    cambioMonedaButton.textContent="Cambiar a dólares (USD)"
+
     cambioMonedaButton.addEventListener('click',()=>{
-       let cambiarMoneda=cambioMoneda(usdMoneda);
-       usdMoneda=cambiarMoneda;
-
-       /* showCarrito(cantidadProductos,carrito,usdMoneda); */
-
-       console.log(usdMoneda)
+        if(!carritoObj.usdMoneda){
+            cambioMonedaButton.textContent="Cambiar a Pesos (COP)";
+            cambioMonedaButton.classList.remove("btn-success");
+            cambioMonedaButton.classList.add("btn-warning");
+            carritoObj.usdMoneda=true;
+        }else{
+            cambioMonedaButton.textContent="Cambiar a dólares (USD)";
+            cambioMonedaButton.classList.remove("btn-warning");
+            cambioMonedaButton.classList.add("btn-success");
+            carritoObj.usdMoneda=false;
+        }
+        listarCarrito(carritoObj);
     })
 
     const resetCarritoButton = document.querySelector('#resetCarritoButton');
@@ -75,15 +79,12 @@ document.addEventListener('DOMContentLoaded', ()=>{
         const carritoBody = document.querySelector('#CarritoBody');
         carritoBody.textContent="";
 
-        carrito=[];
-        cantidadProductos=0;
+        carritoObj.carrito=[];
+        carritoObj.cantidadProductos=0;
 
         const contador = document.querySelector('#contador');
         contador.classList.add('invisible');
     });
-
-
-
 });
 
 
