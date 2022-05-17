@@ -50,6 +50,20 @@
     color:#fff;
 }
 
+.nav-link-footer{
+    color:white;
+    cursor: pointer;
+}
+
+.nav-link-footer:link, .nav-link-footer:visited, .nav-link-footer:active {
+    text-decoration:none;
+    color:white;
+}
+
+.nav-link-footer:hover{
+    color: #dee2e6;
+}
+
 .linkredes{
     height: 40px;
 }
