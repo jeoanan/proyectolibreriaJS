@@ -40,8 +40,9 @@ export function header(){
             main:false,
             nombre:"Regístrate/Inicia Sesión",
             hrefIndex:"vistas/registrate.html",
-            href:"registrate.html",
-            icon:false
+            href:"#offcanvasRegister",
+            icon:false,
+            canvas:true,
         },
         {
             main:false,
@@ -56,6 +57,12 @@ export function header(){
 
         const navLink=document.createElement('a');
         navLink.classList.add('nav-link','navlink-custom');
+
+        if(linkNav.canvas){
+            navLink.setAttribute('data-bs-toggle','offcanvas');
+            navLink.setAttribute('role','button');
+            navLink.setAttribute('aria-controls','offcanvasRegister');
+        }
 
         if(linkNav.icon && window.location.pathname=="/vistas/libreria.html"){
             const iconContainer=document.createElement('i');

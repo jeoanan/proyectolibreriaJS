@@ -1,5 +1,4 @@
-import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js"
-
+import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-auth.js";
 const botonregistro= document.querySelector('#registerButton');
 let modalInformativo=new bootstrap.Modal(document.getElementById('modalinformativo'));
 
@@ -32,7 +31,6 @@ botonregistro.addEventListener("click",(e)=>{
         // ..
         let textoinformativo=document.getElementById("informaciongeneral")
         textoinformativo.textContent="Falla: "+errorMessage
-        modalInformativo.show()
-        
-    }); 
+        modalInformativo.show() 
+    });
 })
